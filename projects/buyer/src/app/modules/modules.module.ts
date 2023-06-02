@@ -7,5 +7,7 @@ import { ModulesComponent } from './modules.component';
 @NgModule({
   declarations: [ModulesComponent],
   imports: [CommonModule, ModulesRoutingModule],
+  providers: [],
+  bootstrap: [ModulesComponent],
 })
 export class ModulesModule {}

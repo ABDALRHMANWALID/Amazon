@@ -1,14 +1,12 @@
-export interface Product {
+export interface Deal {
   id: number;
-  name: string;
+  title: string;
   description: string;
-  images: string[];
-  small_images: string[];
-  main_image: string;
-  small_main_image: string;
-  categories_id: number[];
-  deals_id: number[];
-  details_id: number[];
+  image: string;
+  products_id: number[];
+  categoties_id: number[];
+  keywords_id: number[];
+  advertisements_id: number[];
   wholesale: number;
   num_item: number;
   price_item: number;
@@ -16,6 +14,10 @@ export interface Product {
   sale_price: number;
   profit_item: number;
   total_profit: number;
+  total_profit_sold: number;
+  num_sold: number;
+  seller_id: number;
+  buyers_id: number[];
   average_ratings: number;
   ratings_id: number[];
   reviews_id: number[];
@@ -23,17 +25,12 @@ export interface Product {
   customer_view_details_id: number[];
   num_view_search: number;
   customer_view_search_id: number[];
-  keywords_id: number[];
   savings_ids: number[];
-  related_products_id: number[];
-  seller_id: number;
+  related_deals_id: number[];
   suppliers_id: number[];
-  manufactory: string;
-  sold_num: number;
+  manufactorys: string[];
   orders_id: number[];
-  buyers_id: number[];
   daily_sales_rate: number[];
   sales_rate: number;
-  advertisements_id: number[];
   date_post: string;
 }

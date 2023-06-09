@@ -1,0 +1,12 @@
+{
+  "Keywords": {
+    "id": 0,
+    "txt": "string",
+    "products_id": [0, 1, 2, 3],
+    "categories_id": [0, 1, 2, 3],
+    "advertisings_id": [0, 1, 2, 3],
+    "sellers_id": [0, 1, 2, 3],
+    "deals_id": [0, 1, 2, 3],
+    "suppliers_id": [0, 1, 2, 3]
+  }
+}

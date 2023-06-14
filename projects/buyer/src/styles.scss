@@ -499,7 +499,8 @@ ul {
 
 .sub_title {
   font-size: $big_x;
-  font-weight: bold;
+  font-weight: 500;
+  line-height: 32px;
   color: $color_dark_2;
 
   &.light {

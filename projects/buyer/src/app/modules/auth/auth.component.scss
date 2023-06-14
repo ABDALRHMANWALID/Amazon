@@ -1,0 +1,127 @@
+@use "../../../styles.scss" as main;
+
+.auth {
+  height: 100%;
+  width: 100%;
+  background-color: main.$color_dark_2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .frame {
+      width: 100%;
+      max-width: 980px;
+      max-height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: main.$large_x;
+
+      .con {
+        width: 100%;
+        border-radius: main.$medium;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        justify-content: center;
+
+        .cover-form-auth {
+          height: 100%;
+          width: 100%;
+          background-color: main.$color_gray_3;
+          padding: main.$medium_x2 main.$medium;
+        }
+      }
+
+      .line-auth {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          color: main.$color_gray_1;
+          font-size: main.$small_x2;
+          line-height: 16px;
+          background-color: main.$color_dark_2;
+          z-index: 2;
+          padding: main.$small_x;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          border-radius: 2px;
+          background-color: main.$color_gray_1;
+        }
+      }
+    }
+  }
+}
+:host ::ng-deep {
+  .form-auth {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: main.$medium_x2;
+    .sub_title {
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: main.$small;
+
+      mat-form-field {
+        width: 100%;
+
+        button {
+          color: main.$color_gray_1;
+        }
+      }
+    }
+    .btns-auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: main.$small;
+      width: 100%;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .auth {
+    .container {
+      .frame {
+        .con {
+          grid-template-columns: 1fr;
+          .image-h {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { SecurityCodeComponent } from './security-code/security-code.component';
-
+import { MaterialModule } from '../../shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,8 @@ import { SecurityCodeComponent } from './security-code/security-code.component';
     LoginComponent,
     SignupComponent,
     EmailComponent,
-    SecurityCodeComponent
+    SecurityCodeComponent,
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule
-  ]
+  imports: [CommonModule, AuthRoutingModule, MaterialModule],
 })
-export class AuthModule { }
+export class AuthModule {}

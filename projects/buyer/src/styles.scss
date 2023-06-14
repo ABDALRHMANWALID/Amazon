@@ -10,6 +10,7 @@ $color_SkyBlue_1: #01b2de;
 $color_gray_1: #cccccc;
 $color_gray_2: #eaeded;
 $color_gray_3: #f9f9f9;
+$color_black_3: #000;
 // End Variable Color
 
 // Start Variable Size
@@ -55,7 +56,11 @@ html {
    * Remove the margin in all browsers.
    */
 
-body {
+html,
+body,
+app-root {
+  height: 100%;
+  width: 100%;
   margin: 0;
 }
 
@@ -75,6 +80,13 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 /* Grouping content
@@ -580,3 +592,19 @@ ul {
 // @media(max-width:768px) {
 
 // }
+
+mat-form-field {
+  font-family: "Amazon Ember", sans-serif !important;
+  font-size: $medium !important;
+  border-radius: 0;
+}
+
+.mat-orange {
+  background-color: $color_orang_1 !important;
+  color: $color_black_3 !important;
+}
+
+.mat-dark_2 {
+  background-color: $color_dark_2 !important;
+  color: $color_white_1 !important;
+}

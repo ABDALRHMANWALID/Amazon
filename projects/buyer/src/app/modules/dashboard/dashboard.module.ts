@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-
+import { MaterialModule } from '../../shared/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    DashboardComponent
-  ],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
-  ]
+    DashboardRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

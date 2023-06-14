@@ -1,0 +1,356 @@
+@use "../../../styles.scss" as main;
+
+.dashboard {
+  height: 100%;
+  width: 100%;
+
+  mat-sidenav-container {
+    @extend .dashboard;
+
+    mat-sidenav {
+      background-color: main.$color_gray_3;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .con {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: main.$small_x;
+        padding: main.$small_x main.$medium_x2 main.$small_x main.$big;
+      }
+
+      .head-side {
+        width: 100%;
+        padding: main.$small_x 0;
+        background-color: main.$color_dark_2;
+
+        button {
+          align-items: flex-start;
+          padding: 0;
+          width: 100%;
+          .mat-mdc-button {
+            width: 100%;
+            .mdc-button__label {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .body-side {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .session-side {
+          @extend .body-side;
+
+          padding: main.$medium 0;
+          border-bottom: 1px solid main.$color_gray_1;
+          gap: main.$small_x;
+
+          .title-side {
+            width: 100%;
+          }
+
+          .nav-side {
+            @extend .body-side;
+
+            button:not(.btn-back-side) {
+              text-align: start;
+              align-items: flex-start;
+              padding: 0;
+              width: 100%;
+
+              > {
+                span {
+                  width: 100%;
+                }
+              }
+              .mat-mdc-button {
+                width: 100%;
+                .mdc-button__label {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    mat-sidenav-content {
+      header {
+        width: 100%;
+        padding: main.$small_x 0;
+        background-color: main.$color_dark_2;
+
+        .container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: main.$medium_x2;
+          .cover-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: main.$small;
+            button {
+              padding: 0;
+            }
+
+            .logo {
+              @extend .image;
+              width: calc(main.$large_x2 * 2);
+            }
+          }
+
+          nav {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: main.$medium_x;
+
+            // a {
+            //   font-size: main.$medium;
+            // }
+          }
+
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: main.$medium_x;
+
+            li {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              // a {
+              //   display: flex;
+              //   align-items: center;
+              //   justify-content: center;
+              //   gap: main.$medium;
+              //   width: fit-content;
+
+              //   mat-icon {
+              //     width: main.$big;
+              //     height: main.$big;
+              //     font-size: main.$big;
+              //   }
+
+              //   span {
+              //     max-width: 150px;
+              //   }
+              // }
+
+              &:not(:last-of-type) {
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  right: calc(main.$small_x2 * -1);
+                  background-color: main.$color_gray_3;
+                  width: 1px;
+                  height: main.$medium_x2;
+                  transform: translate(-50%, -50%);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .search {
+        width: 100%;
+        padding: main.$medium 0 0 0;
+        background-color: main.$color_dark_1;
+
+        .container {
+          display: grid;
+          grid-template-columns: 100px 1fr auto;
+          align-items: center;
+          justify-content: center;
+
+          input {
+            caret-color: main.$color_dark_2;
+          }
+
+          button {
+            height: calc(100% - main.$medium_x) !important;
+            margin-bottom: main.$medium_x;
+            border-radius: 0 main.$medium_x2 main.$medium_x2 0;
+
+            mat-icon {
+              width: main.$big;
+              height: main.$big;
+              font-size: main.$big;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .search {
+    .search-select {
+      .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        border-radius: main.$medium_x2 0 0 main.$medium_x2 !important;
+      }
+    }
+
+    .search-input {
+      .mdc-text-field {
+        border-radius: 0 !important;
+      }
+    }
+    .mat-mdc-form-field-bottom-align::before {
+      height: 0px !important;
+    }
+    .mat-mdc-form-field-infix {
+      min-height: auto !important;
+    }
+    .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+        .mdc-text-field--textarea
+      ) {
+      .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+      }
+    }
+    .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) {
+      .mat-mdc-form-field-infix {
+        padding-top: 12px !important;
+        padding-bottom: 3px !important;
+      }
+    }
+  }
+  .mat-drawer-container {
+    background-color: transparent;
+    color: initial;
+  }
+  .dashboard {
+    mat-sidenav-container {
+      > {
+        mat-sidenav {
+          > {
+            .mat-drawer-inner-container {
+              overflow: hidden;
+            }
+          }
+        }
+      }
+      mat-sidenav {
+        button:not([mat-icon-button]) {
+          text-align: start;
+          display: flex;
+          gap: main.$small_x;
+          align-items: center;
+          padding: 0;
+          width: 100%;
+
+          &.btn-back-side {
+            padding: main.$big 0 main.$big_x !important;
+            font-weight: 600;
+          }
+          > {
+            span {
+              width: 100%;
+            }
+          }
+          .mat-mdc-button {
+            width: 100%;
+            .mdc-button__label {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard {
+    mat-sidenav-container {
+      mat-sidenav-content {
+        header {
+          .container {
+            gap: main.$medium;
+            nav {
+              gap: main.$small_x2;
+            }
+            ul {
+              gap: main.$small_x2;
+              li {
+                button {
+                  span {
+                    display: none;
+                  }
+                }
+                &:not(:last-of-type) {
+                  &::before {
+                    right: calc(main.$small_x * -1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    mat-sidenav-container {
+      mat-sidenav-content {
+        header {
+          .container {
+            nav {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard {
+    mat-sidenav-container {
+      mat-sidenav-content {
+        header {
+          .container {
+            nav {
+              display: none;
+            }
+            ul {
+              li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: main.$big_x2 !important;
+                width: main.$big_x2 !important;
+                padding: 0;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

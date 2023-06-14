@@ -1,2 +1,163 @@
-<p>dashboard works!</p>
-<router-outlet></router-outlet>
+<div class="dashboard">
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="openSideNav" (closed)="test.close()" mode="over">
+      <div class="head-side">
+        <button mat-button color="dark_2">
+          <div class="con">
+            <mat-icon>account_circle</mat-icon><span>Hello, sign in</span>
+          </div>
+        </button>
+      </div>
+      <mat-sidenav-container>
+        <mat-sidenav #test mode="side"
+          ><ul class="body-side">
+            <div class="session-side">
+              <button class="btn-back-side" mat-button (click)="test.close()">
+                <div class="con">
+                  <!-- <button mat-icon-button> -->
+                  <mat-icon>arrow_back</mat-icon>
+                  <!-- </button> -->
+                  <span>Back</span>
+                </div>
+              </button>
+            </div>
+            <div class="session-side"><div class="con">Test</div></div>
+          </ul></mat-sidenav
+        >
+        <mat-sidenav-content>
+          <ul class="body-side">
+            <li class="session-side">
+              <h3 class="title-side"><div class="con">Trending</div></h3>
+              <nav class="nav-side">
+                <button mat-button>
+                  <div class="con">Best Sellers</div>
+                </button>
+                <button mat-button><div class="con">New Release</div></button>
+                <button mat-button>
+                  <div class="con">Movers & Shakers</div>
+                </button>
+              </nav>
+            </li>
+            <li class="session-side">
+              <h3 class="title-side">
+                <div class="con">Shop By Category</div>
+              </h3>
+              <nav class="nav-side">
+                <button mat-button (click)="test.toggle()">
+                  <div class="con">........</div>
+                </button>
+                <button mat-button><div class="con">........</div></button>
+                <button mat-button><div class="con">........</div></button>
+              </nav>
+            </li>
+            <li class="session-side">
+              <h3 class="title-side">
+                <div class="con">Programs & Features</div>
+              </h3>
+              <nav class="nav-side">
+                <button mat-button>
+                  <div class="con">Today's Deals</div>
+                </button>
+                <button mat-button>
+                  <div class="con">Amazon Outlet</div>
+                </button>
+              </nav>
+            </li>
+            <li class="session-side">
+              <h3 class="title-side">
+                <div class="con">Help & Settings</div>
+              </h3>
+              <nav class="nav-side">
+                <button mat-button>
+                  <div class="con">Your Account</div>
+                </button>
+                <button mat-button><div class="con">Help</div></button>
+                <button mat-button><div class="con">Sign in</div></button>
+              </nav>
+            </li>
+          </ul>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <header>
+        <div class="container">
+          <div class="cover-logo">
+            <button
+              mat-icon-button
+              color="dark_2"
+              (click)="openSideNav = !openSideNav"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+            <div class="logo">
+              <img src="assets/images/logo_1.svg" alt="" />
+            </div>
+          </div>
+          <nav>
+            <button mat-button color="dark_2">Products</button>
+            <button mat-button color="dark_2">Today 's Deals</button>
+            <button mat-button color="dark_2">Selling in Amazon</button>
+          </nav>
+          <ul>
+            <li>
+              <button mat-button color="dark_2">
+                <mat-icon> location_on</mat-icon><span>Deliver to Egypt</span>
+              </button>
+            </li>
+            <li>
+              <button mat-button color="dark_2">
+                <mat-icon>account_circle</mat-icon
+                ><span>Hello, sign in<br />Account list</span>
+              </button>
+            </li>
+            <li>
+              <button mat-icon-button color="dark_2">
+                <mat-icon>inbox</mat-icon>
+              </button>
+            </li>
+            <li>
+              <button mat-icon-button color="dark_2">
+                <mat-icon>shopping_cart</mat-icon>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div class="search">
+        <div class="container">
+          <mat-form-field class="search-select">
+            <mat-select [formControl]="toppings" multiple placeholder="Select">
+              <mat-option
+                *ngFor="let topping of toppingList"
+                [value]="topping"
+                >{{ topping }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="search-input">
+            <!-- <mat-label>Search Amazon</mat-label> -->
+            <input
+              type="text"
+              placeholder="Products, Sellers, Deals, Categories ...."
+              aria-label="Number"
+              matInput
+              [formControl]="myControl"
+              [matAutocomplete]="auto"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions | async"
+                [value]="option"
+              >
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <button mat-button color="orange"><mat-icon>search</mat-icon></button>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

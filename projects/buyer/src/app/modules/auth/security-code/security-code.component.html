@@ -1,1 +1,44 @@
-<p>security-code works!</p>
+<div class="form-auth">
+  <div class="sub_title">Enter The Code</div>
+  <form>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        formControlName="fristNumber"
+        type="number"
+        required
+        placeholder="0"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        formControlName="secondNumber"
+        type="number"
+        required
+        placeholder="0"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        formControlName="thirdNumber"
+        type="number"
+        required
+        placeholder="0"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        formControlName="fourthNumber"
+        type="number"
+        required
+        placeholder="0"
+      />
+    </mat-form-field>
+  </form>
+  <div class="btns-auth">
+    <button mat-flat-button color="orange">Send</button>
+  </div>
+</div>

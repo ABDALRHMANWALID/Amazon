@@ -1,1 +1,17 @@
-<p>email works!</p>
+<div class="form-auth">
+  <div class="sub_title">Forget Password</div>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>Email or Phone number</mat-label>
+      <input matInput formControlName="email" required />
+      <mat-error>required</mat-error>
+    </mat-form-field>
+    <a routerLink="/auth/" class="main_link">Login</a>
+  </form>
+  <div class="btns-auth">
+    <button mat-flat-button color="orange">Send</button>
+    <button mat-flat-button routerLink="/auth/signup" color="dark_2">
+      Create new Account
+    </button>
+  </div>
+</div>

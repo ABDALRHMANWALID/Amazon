@@ -1,1 +1,42 @@
-<p>signup works!</p>
+<div class="form-auth">
+  <div class="sub_title">Create Account</div>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>Frist and last name</mat-label>
+      <input matInput formControlName="name" required />
+      <mat-error>required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email or Phone number</mat-label>
+      <input matInput formControlName="email" required />
+      <mat-error>required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'"
+        required
+      />
+      <mat-error>required</mat-error>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Re-enter password</mat-label>
+      <input matInput formControlName="password" type="password" required />
+      <mat-error>required</mat-error>
+    </mat-form-field>
+  </form>
+  <div class="btns-auth">
+    <button mat-flat-button color="orange">Create new Account</button>
+    <button mat-flat-button routerLink="/auth" color="dark_2">Sign in</button>
+  </div>
+</div>

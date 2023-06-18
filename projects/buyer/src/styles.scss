@@ -615,7 +615,31 @@ mat-form-field {
   color: $color_black_3 !important;
 }
 
+.mat-orange_bord {
+  // background-color: $color_orang_1 !important;
+  color: $color_orang_1 !important;
+}
+
 .mat-dark_2 {
   background-color: $color_dark_2 !important;
   color: $color_white_1 !important;
 }
+
+.mat-white {
+  background-color: $color_white_1 !important;
+  color: $color_SkyBlue_1 !important;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .star {
+    color: $color_orang_1;
+  }
+}
+
+// @import "../../../node_modules/@angular/material/theming";
+// @include mat-core();
+
+// $my-primary: mat-palette($mat-lightBlue, 900);

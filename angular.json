@@ -20,9 +20,7 @@
             "outputPath": "dist/buyer",
             "index": "projects/buyer/src/index.html",
             "main": "projects/buyer/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/buyer/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -31,6 +29,8 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "projects/buyer/src/styles.scss"
             ],
             "scripts": []
@@ -83,10 +83,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/buyer/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -95,6 +92,8 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "projects/buyer/src/styles.scss"
             ],
             "scripts": []
@@ -119,18 +118,14 @@
             "outputPath": "dist/seller",
             "index": "projects/seller/src/index.html",
             "main": "projects/seller/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/seller/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/seller/src/favicon.ico",
               "projects/seller/src/assets"
             ],
-            "styles": [
-              "projects/seller/src/styles.scss"
-            ],
+            "styles": ["projects/seller/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -181,19 +176,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/seller/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/seller/src/favicon.ico",
               "projects/seller/src/assets"
             ],
-            "styles": [
-              "projects/seller/src/styles.scss"
-            ],
+            "styles": ["projects/seller/src/styles.scss"],
             "scripts": []
           }
         }
@@ -216,18 +206,14 @@
             "outputPath": "dist/admin",
             "index": "projects/admin/src/index.html",
             "main": "projects/admin/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/admin/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
             ],
-            "styles": [
-              "projects/admin/src/styles.scss"
-            ],
+            "styles": ["projects/admin/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -278,19 +264,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/admin/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
             ],
-            "styles": [
-              "projects/admin/src/styles.scss"
-            ],
+            "styles": ["projects/admin/src/styles.scss"],
             "scripts": []
           }
         }

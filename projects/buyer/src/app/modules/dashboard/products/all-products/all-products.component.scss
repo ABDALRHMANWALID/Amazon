@@ -1,0 +1,325 @@
+@use "../../../../../styles.scss" as main;
+
+.all-products {
+  width: 100%;
+
+  mat-sidenav-container {
+    width: 100%;
+    height: 100%;
+
+    mat-sidenav {
+      background-color: main.$color_SkyBlue_1;
+      width: 280px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .con {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: main.$small_x;
+        padding: main.$big main.$medium_x2 main.$small_x main.$big;
+
+        .filter-secciones {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: main.$big_x;
+
+          .filter-seccion {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: main.$medium;
+
+            .title-filter-seccion {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              font-size: main.$medium_x;
+              padding-bottom: main.$medium;
+              color: main.$color_gray_3;
+              border-bottom: 1px solid main.$color_gray_3;
+
+              button {
+                transform: rotate(0deg);
+                transition: 0.3s;
+
+                &.active {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+
+            .body-filter-seccion {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              overflow: hidden;
+              max-height: 0;
+              transition: max-height 0.3s ease-out;
+
+              &.show {
+                overflow: visible;
+                max-height: 2000px;
+                transition: max-height 0.5s ease-in;
+              }
+
+              .group-checkboxes {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                li {
+                  mat-checkbox {
+                    color: main.$color_gray_3 !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        button {
+          text-align: center;
+        }
+      }
+    }
+
+    mat-sidenav-content {
+      .main_title {
+        width: 100%;
+        background-color: main.$color_gray_2;
+        padding: main.$medium;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: main.$medium;
+
+        &::before {
+          content: "";
+          height: main.$small;
+          width: main.$large_x;
+          background-color: main.$color_orang_1;
+          position: relative;
+          display: flex;
+        }
+      }
+
+      .products {
+        padding-bottom: main.$large;
+        padding-left: main.$medium;
+        padding-right: main.$medium;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: main.$color_gray_3;
+
+        .head-products {
+          padding: main.$big;
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+
+          .num-products {
+            @extend .paragraph;
+            font-size: main.$medium_x;
+          }
+
+          ul {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: main.$small_x;
+
+            li {
+              button {
+                transition: 0.3s;
+
+                &.active {
+                  background-color: main.$color_orang_1;
+                  color: main.$color_gray_3;
+                }
+              }
+            }
+          }
+        }
+
+        .group-products {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: main.$medium_x2 main.$medium;
+          transition: 0.3s;
+
+          .single-product {
+            position: relative;
+            background-color: main.$color_gray_3;
+            border-radius: main.$small_x;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: main.$medium;
+            border: 1px solid main.$color_gray_1;
+            overflow: hidden;
+
+            // padding: main.$small_x main.$small_x main.$medium main.$small_x;
+            padding-bottom: main.$medium;
+            transition: 0.3s;
+
+            .discount {
+              background-color: main.$color_red_1;
+              color: main.$color_gray_3;
+              font-size: main.$medium;
+              padding: main.$small main.$small_x;
+              border-radius: main.$small;
+              position: absolute;
+              top: main.$small_x;
+              left: main.$small_x;
+            }
+
+            .icons {
+              position: absolute;
+              top: main.$small_x;
+              right: main.$small_x;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start;
+              gap: main.$medium;
+
+              a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: main.$big_x;
+                height: main.$big_x;
+                border-radius: 50%;
+                background-color: main.$color_gray_3;
+                font-size: main.$small_x2;
+                transition: 0.3s;
+
+                &.fav-icon {
+                  &.active {
+                    color: main.$color_gray_3;
+                    background-color: main.$color_red_1;
+                  }
+                }
+
+                &.cart-icon {
+                  &.active {
+                    color: main.$color_dark_1;
+                    background-color: main.$color_orang_1;
+                  }
+                }
+              }
+            }
+
+            .image {
+              width: 100%;
+              max-height: 280px;
+            }
+
+            .info-product {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              width: 100%;
+              padding: 0 main.$medium;
+              gap: main.$small !important;
+
+              .name {
+                @extend .paragraph;
+                color: main.$color_black_3;
+              }
+
+              .price {
+                font-size: main.$medium;
+                font-weight: 600;
+              }
+            }
+
+            &:hover {
+              transform: scale(1.01);
+              cursor: pointer;
+              box-shadow: main.$main-shadow;
+            }
+          }
+
+          &.big-grid {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          }
+
+          &.row-grid {
+            grid-template-columns: 1fr;
+
+            .single-product {
+              flex-direction: row;
+
+              padding-bottom: 0;
+
+              .image {
+                height: 180px;
+                width: 200px;
+
+                img {
+                  height: 100%;
+                  width: auto;
+                }
+              }
+            }
+          }
+        }
+
+        .pagination {
+          padding: main.$big_x 0;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .media {
+          display: none;
+        }
+
+        &.XSmall,
+        &.Small {
+          .media {
+            display: flex;
+          }
+          .no_media {
+            display: none;
+          }
+          .head-products {
+            ul {
+              align-items: center !important;
+              gap: main.$small_x;
+            }
+          }
+        }
+      }
+    }
+  }
+}

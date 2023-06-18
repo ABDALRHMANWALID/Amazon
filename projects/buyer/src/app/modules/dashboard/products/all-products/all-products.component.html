@@ -1,1 +1,217 @@
-<p>all-products works!</p>
+<div class="all-products">
+  <mat-sidenav-container>
+    <mat-sidenav
+      #sideNavFilter
+      [opened]="
+        currentScreenSize == 'Medium' ||
+        currentScreenSize == 'Large' ||
+        currentScreenSize == 'XLarge'
+      "
+      [ngClass]="currentScreenSize"
+      [mode]="
+        currentScreenSize == 'Medium' ||
+        currentScreenSize == 'Large' ||
+        currentScreenSize == 'XLarge'
+          ? 'side'
+          : 'over'
+      "
+    >
+      <div class="con">
+        <div class="filter-secciones">
+          <div class="filter-seccion">
+            <div class="title-filter-seccion">
+              <span>Categories</span
+              ><button
+                mat-icon-button
+                (click)="showBodyFilter(bodyCategories, $event)"
+              >
+                <mat-icon>expand_less</mat-icon>
+              </button>
+            </div>
+            <div class="body-filter-seccion show" #bodyCategories>
+              <ul class="group-checkboxes">
+                <li *ngFor="let category of categories">
+                  <mat-checkbox color="orange_bord">
+                    {{ category }}
+                  </mat-checkbox>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-seccion">
+            <div class="title-filter-seccion">
+              <span>Range Price</span
+              ><button
+                mat-icon-button
+                (click)="showBodyFilter(bodyPriceRate, $event)"
+              >
+                <mat-icon>expand_less</mat-icon>
+              </button>
+            </div>
+            <div class="body-filter-seccion show" #bodyPriceRate>
+              <mat-slider
+                min="0"
+                max="100000"
+                step="1000"
+                showTickMarks
+                discrete
+                [displayWith]="formatLabel"
+              >
+                <input value="33000" matSliderStartThumb />
+                <input value="73000" matSliderEndThumb />
+              </mat-slider>
+            </div>
+          </div>
+        </div>
+        <button mat-flat-button color="white">Filter</button>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="main_title">Amazon Deals</div>
+      <div class="products" [ngClass]="currentScreenSize">
+        <div class="head-products">
+          <div class="num-products">180 Items</div>
+          <ul>
+            <li class="no_media">
+              <button
+                [class.active]="!bigGridProducts"
+                mat-icon-button
+                (click)="bigGridProducts = false"
+              >
+                <mat-icon> border_all</mat-icon>
+              </button>
+            </li>
+            <li>
+              <button
+                *ngIf="
+                  currentScreenSize == 'Medium' ||
+                  currentScreenSize == 'Large' ||
+                  currentScreenSize == 'XLarge'
+                "
+                [class.active]="bigGridProducts"
+                mat-icon-button
+                (click)="bigGridProducts = true"
+              >
+                <mat-icon>grid_on</mat-icon>
+              </button>
+              <button
+                *ngIf="
+                  currentScreenSize == 'XSmall' || currentScreenSize == 'Small'
+                "
+                [class.active]="!rowGridProducts"
+                mat-icon-button
+                (click)="rowGridProducts = false"
+              >
+                <mat-icon>grid_on</mat-icon>
+              </button>
+            </li>
+            <li class="media">
+              <button
+                [class.active]="rowGridProducts"
+                mat-icon-button
+                (click)="rowGridProducts = true"
+              >
+                <mat-icon>view_list</mat-icon>
+              </button>
+            </li>
+            <li class="media">
+              <button
+                mat-flat-button
+                color="orange"
+                (click)="sideNavFilter.open()"
+              >
+                Filter
+              </button>
+            </li>
+            <li class="no_media">
+              <mat-form-field>
+                <mat-label>CATEGORIES</mat-label>
+                <mat-select [(ngModel)]="categorySelect">
+                  <mat-option
+                    *ngFor="let category of categories"
+                    [value]="category"
+                  >
+                    {{ category }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </li>
+            <li class="no_media">
+              <mat-form-field>
+                <mat-label>FILTAR</mat-label>
+                <mat-select [(ngModel)]="filterSelect">
+                  <mat-option *ngFor="let filter of filters" [value]="filters">
+                    {{ filter }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </li>
+          </ul>
+        </div>
+        <div
+          [ngClass]="{
+            'big-grid': bigGridProducts,
+            'row-grid':
+              rowGridProducts &&
+              (currentScreenSize == 'XSmall' || currentScreenSize == 'Small')
+          }"
+          class="group-products"
+        >
+          <div
+            class="single-product"
+            *ngFor="
+              let product of products
+                | paginate
+                  : {
+                      id: 'products-pagination',
+                      itemsPerPage: 9,
+                      currentPage: page,
+                      totalItems: products.length
+                    }
+            "
+          >
+            <div class="image">
+              <img [src]="product.image" />
+            </div>
+            <div class="discount">{{ product.discount }}% OFF</div>
+            <div class="icons">
+              <a
+                [class.active]="product.inFavourites"
+                class="fav-icon"
+                (click)="product.inFavourites = !product.inFavourites"
+              >
+                <mat-icon>favorite_border</mat-icon>
+              </a>
+              <a
+                [class.active]="product.inCart"
+                class="cart-icon"
+                (click)="product.inCart = !product.inCart"
+              >
+                <mat-icon>shopping_cart</mat-icon>
+              </a>
+            </div>
+            <div class="info-product">
+              <div class="rating-stars">
+                <div class="star" *ngFor="let star of product.rating">
+                  <mat-icon *ngIf="star == 1">star</mat-icon>
+                  <mat-icon *ngIf="star == 0.5">star_half</mat-icon>
+                  <mat-icon *ngIf="star == 0">star_border</mat-icon>
+                </div>
+              </div>
+              <div class="name">{{ product.name }}</div>
+              <div class="price">
+                {{ product.price }} EGP / {{ product.lastPrice }} EGP
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <pagination-controls
+            (pageChange)="changePage($event)"
+            id="products-pagination"
+          ></pagination-controls>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

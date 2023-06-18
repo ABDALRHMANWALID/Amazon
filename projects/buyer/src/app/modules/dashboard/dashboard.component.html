@@ -90,12 +90,14 @@
             >
               <mat-icon>menu</mat-icon>
             </button>
-            <div class="logo">
+            <div class="logo" routerLink="/">
               <img src="assets/images/logo_1.svg" alt="" />
             </div>
           </div>
           <nav>
-            <button mat-button color="dark_2">Products</button>
+            <button mat-button color="dark_2" routerLink="/product">
+              Products
+            </button>
             <button mat-button color="dark_2">Today 's Deals</button>
             <button mat-button color="dark_2">Selling in Amazon</button>
           </nav>
@@ -106,18 +108,22 @@
               </button>
             </li>
             <li>
-              <button mat-button color="dark_2">
+              <button mat-button color="dark_2" routerLink="/auth">
                 <mat-icon>account_circle</mat-icon
                 ><span>Hello, sign in<br />Account list</span>
               </button>
             </li>
             <li>
-              <button mat-icon-button color="dark_2">
+              <button
+                mat-icon-button
+                color="dark_2"
+                routerLink="/account/orders"
+              >
                 <mat-icon>inbox</mat-icon>
               </button>
             </li>
             <li>
-              <button mat-icon-button color="dark_2">
+              <button mat-icon-button color="dark_2" routerLink="/account/cart">
                 <mat-icon>shopping_cart</mat-icon>
               </button>
             </li>

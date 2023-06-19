@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products.component';
-import { AllProductsComponent } from './all-products/all-products.component';
-import { DetailsProductComponent } from './details-product/details-product.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ProductsComponent,
     children: [
-      { path: '', component: AllProductsComponent },
-      { path: ':id', component: DetailsProductComponent },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./all-products/all-products.module').then(
+            (m) => m.AllProductsModule
+          ),
+      },
+      {
+        path: ':id',
+        loadChildren: () =>
+          import('./details-product/details-product.module').then(
+            (m) => m.DetailsProductModule
+          ),
+      },
     ],
   },
 ];

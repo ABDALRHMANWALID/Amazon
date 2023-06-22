@@ -3,11 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { EmailComponent } from './email/email.component';
+import { SecurityCodeComponent } from './security-code/security-code.component';
 
 
 @NgModule({
   declarations: [
-    AuthComponent
+    AuthComponent,
+    SigninComponent,
+    SignupComponent,
+    EmailComponent,
+    SecurityCodeComponent
   ],
   imports: [
     CommonModule,

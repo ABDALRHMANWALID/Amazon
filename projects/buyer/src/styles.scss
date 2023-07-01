@@ -695,3 +695,134 @@ mat-form-field {
     min-height: 0px;
   }
 }
+
+.group-products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: $medium_x2 $medium;
+  transition: 0.3s;
+
+  .single-product {
+    position: relative;
+    background-color: $color_gray_3;
+    border-radius: $small_x;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $medium;
+    border: 1px solid $color_gray_1;
+    overflow: hidden;
+
+    // padding: $small_x $small_x $medium $small_x;
+    padding-bottom: $medium;
+    transition: 0.3s;
+
+    .discount {
+      background-color: $color_red_1;
+      color: $color_gray_3;
+      font-size: $medium;
+      padding: $small $small_x;
+      border-radius: $small;
+      position: absolute;
+      top: $small_x;
+      left: $small_x;
+    }
+
+    .icons {
+      position: absolute;
+      top: $small_x;
+      right: $small_x;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: $medium;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $big_x;
+        height: $big_x;
+        border-radius: 50%;
+        background-color: $color_gray_3;
+        font-size: $small_x2;
+        transition: 0.3s;
+
+        &.fav-icon {
+          &.active {
+            color: $color_gray_3;
+            background-color: $color_red_1;
+          }
+        }
+
+        &.cart-icon {
+          &.active {
+            color: $color_dark_1;
+            background-color: $color_orang_1;
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+      max-height: 280px;
+    }
+
+    .info-product {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 0 $medium;
+      gap: $small !important;
+
+      .name {
+        @extend .paragraph;
+        color: $color_black_3;
+      }
+
+      .price {
+        font-size: $medium;
+        font-weight: 600;
+        color: $color_dark_1;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.01);
+      cursor: pointer;
+      box-shadow: $main-shadow;
+    }
+  }
+
+  &.big-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  &.row-grid {
+    grid-template-columns: 1fr;
+
+    .single-product {
+      flex-direction: row;
+
+      padding-bottom: 0;
+
+      .image {
+        height: 180px;
+        width: 200px;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -527,6 +527,13 @@ ul {
   padding-bottom: $large_x2;
 }
 
+.sub_session {
+  width: 100%;
+  background-color: $color_gray_3;
+  border-radius: $medium;
+  padding: $big_x $medium_x2;
+}
+
 .session_bg {
   background-size: cover;
   background-position: center center;

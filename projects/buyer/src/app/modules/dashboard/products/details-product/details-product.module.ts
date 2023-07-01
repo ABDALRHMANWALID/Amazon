@@ -8,6 +8,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { DetailsProductComponent } from './details-product.component';
 import { MaterialModule } from 'projects/buyer/src/app/shared/material/material.module';
 import { FormsModule } from '@angular/forms';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     DetailsProductRoutingModule,
     MaterialModule,
     FormsModule,
+    NgxImageZoomModule,
   ],
 })
 export class DetailsProductModule {}

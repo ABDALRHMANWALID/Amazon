@@ -2,12 +2,25 @@
   <div class="container">
     <div class="images">
       <ul class="small-images">
-        <li class="image" *ngFor="let image of images">
+        <li
+          class="image"
+          (click)="mainImage = image.big"
+          *ngFor="let image of images"
+        >
           <img [src]="image.small" alt="" />
         </li>
       </ul>
       <div class="main-image">
-        <img [src]="images[0].big" alt="" />
+        <!-- <img [src]="images[0].big" alt="" /> -->
+        <lib-ngx-image-zoom
+          [thumbImage]="mainImage"
+          [fullImage]="mainImage"
+          [magnification]="3"
+          [enableScrollZoom]="true"
+          [enableLens]="true"
+          [lensWidth]="200"
+          [lensHeight]="200"
+        ></lib-ngx-image-zoom>
       </div>
     </div>
     <div class="cen-info">

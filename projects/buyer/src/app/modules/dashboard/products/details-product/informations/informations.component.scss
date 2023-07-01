@@ -48,8 +48,16 @@
         overflow: hidden;
         cursor: pointer;
 
-        img {
+        lib-ngx-image-zoom {
           width: 100%;
+
+          .ngxImageZoomContainer {
+            width: 100%;
+
+            img {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -191,6 +199,7 @@
         justify-content: flex-start;
         gap: main.$medium;
       }
+
       .paragraph {
         color: main.$color_gray_3;
         line-height: main.$big;
@@ -225,10 +234,25 @@
   }
 }
 
+:host ::ng-deep {
+  lib-ngx-image-zoom {
+    width: 100%;
+
+    .ngxImageZoomContainer {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .inforamtion-product {
     .container {
       grid-template-columns: 1fr;
+
       .images,
       .left-info {
         position: relative;
@@ -236,14 +260,31 @@
 
       .images {
         .main-image {
-          height: 100vh;
-          align-items: center;
+          max-height: 100vh;
+          // align-items: center;
           justify-content: center;
 
           img {
             width: auto;
             height: 100%;
           }
+        }
+      }
+    }
+  }
+
+  :host ::ng-deep {
+    lib-ngx-image-zoom {
+      width: auto;
+      height: 100%;
+
+      .ngxImageZoomContainer {
+        width: auto;
+        height: 100%;
+
+        img {
+          width: auto;
+          height: 100%;
         }
       }
     }
@@ -259,6 +300,23 @@
             width: 100%;
             height: auto;
           }
+        }
+      }
+    }
+  }
+
+  :host ::ng-deep {
+    lib-ngx-image-zoom {
+      width: 100%;
+      height: auto;
+
+      .ngxImageZoomContainer {
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto;
         }
       }
     }

@@ -29,6 +29,7 @@ export class InformationsComponent {
       big: 'assets/images/big-prod-5.jpg',
     },
   ];
+  mainImage: string = this.images[0].big;
 
   brand: string = 'OPPO';
   rating: number[] = [1, 1, 1, 0, 0];

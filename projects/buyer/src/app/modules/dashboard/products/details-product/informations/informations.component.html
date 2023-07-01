@@ -1,1 +1,126 @@
-<p>informations works!</p>
+<div class="inforamtion-product">
+  <div class="container">
+    <div class="images">
+      <ul class="small-images">
+        <li class="image" *ngFor="let image of images">
+          <img [src]="image.small" alt="" />
+        </li>
+      </ul>
+      <div class="main-image">
+        <img [src]="images[0].big" alt="" />
+      </div>
+    </div>
+    <div class="cen-info">
+      <div class="name">
+        OPPO Reno 8T Dual SIM 6.43 inches Smartphone 256GB 8GB RAM | 5000mAh
+        Long Lasting Battery |Fingerprint and Face Recognition | 4G Android
+      </div>
+      <a class="main_link brand_link">Brand : {{ brand }}</a>
+      <div class="rating-stars">
+        <div class="star" *ngFor="let star of rating">
+          <mat-icon *ngIf="star == 1">star</mat-icon>
+          <mat-icon *ngIf="star == 0.5">star_half</mat-icon>
+          <mat-icon *ngIf="star == 0">star_border</mat-icon>
+        </div>
+      </div>
+      <div class="price"><small>EGP</small> 11,100</div>
+      <div class="seller-link">
+        <div class="image">
+          <img src="assets/images/seller_1.jpg" alt="" />
+        </div>
+        <span>Abdalrhman Walid</span>
+      </div>
+      <div class="main_link">Free Return</div>
+      <div class="paragraph">All prices include VAT.</div>
+      <div class="paragraph">
+        Buy with installments and pay EGP 282.68 for 60 months with select
+        banks. <a href="" class="main_link">Learn more</a>
+      </div>
+      <ul class="info-delivery">
+        <li>
+          <div class="icon">
+            <img src="assets/images/icons/1/orange_1.png" alt="" />
+          </div>
+          <div class="paragraph">Not eligible for COD</div>
+        </li>
+        <li>
+          <div class="icon">
+            <img src="assets/images/icons/2/orange_1.png" alt="" />
+          </div>
+          <div class="paragraph">Fulfilled by Amazon</div>
+        </li>
+        <li>
+          <div class="icon">
+            <img src="assets/images/icons/3/orange_1.png" alt="" />
+          </div>
+          <div class="paragraph">15 days Returnable</div>
+        </li>
+        <li>
+          <div class="icon">
+            <img src="assets/images/icons/4/orange_1.png" alt="" />
+          </div>
+          <div class="paragraph">15 days Returnable</div>
+        </li>
+      </ul>
+      <ul class="details">
+        <li *ngFor="let detail of details">
+          <div class="paragraph">{{ detail.name }}</div>
+          <div class="paragraph">{{ detail.value }}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="left-info">
+      <div class="info-con">
+        <div class="price"><small>EGP</small> 45,750</div>
+        <div class="con">
+          <a class="main_link">Free Return</a>
+          <div class="paragraph">
+            <a class="main_link">Free delivery</a> Tuesday, March 28
+          </div>
+          <div class="paragraph">
+            <mat-icon> location_on</mat-icon> Deliver Egypt
+          </div>
+        </div>
+        <div class="paragraph">Only 2 left in stock - order soon</div>
+        <ul class="group-btns">
+          <li>
+            <button
+              mat-flat-button
+              color="orange"
+              *ngIf="add_cart <= 0"
+              (click)="add_cart = add_cart + 1"
+            >
+              Add to Cart
+            </button>
+            <div class="add_cart" *ngIf="add_cart > 0">
+              <button
+                mat-mini-fab
+                color="orange"
+                (click)="add_cart = add_cart + 1"
+              >
+                +
+              </button>
+              <mat-form-field appearance="outline" class="custom-border">
+                <input matInput type="number" [(ngModel)]="add_cart" />
+              </mat-form-field>
+              <button
+                mat-mini-fab
+                color="orange"
+                (click)="add_cart = add_cart - 1"
+              >
+                -
+              </button>
+            </div>
+          </li>
+          <li>
+            <button mat-flat-button color="gray_3">Buy Now</button>
+          </li>
+        </ul>
+        <div class="con">
+          <div class="paragraph">Payment : Secure transaction</div>
+          <div class="paragraph">Fulfilled by : Amazon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

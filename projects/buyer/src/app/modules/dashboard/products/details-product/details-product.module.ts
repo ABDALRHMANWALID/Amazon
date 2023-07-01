@@ -6,6 +6,8 @@ import { InformationsComponent } from './informations/informations.component';
 import { RelatedProductsComponent } from './related-products/related-products.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { DetailsProductComponent } from './details-product.component';
+import { MaterialModule } from 'projects/buyer/src/app/shared/material/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,11 @@ import { DetailsProductComponent } from './details-product.component';
     ReviewsComponent,
     DetailsProductComponent,
   ],
-  imports: [CommonModule, DetailsProductRoutingModule],
+  imports: [
+    CommonModule,
+    DetailsProductRoutingModule,
+    MaterialModule,
+    FormsModule,
+  ],
 })
 export class DetailsProductModule {}

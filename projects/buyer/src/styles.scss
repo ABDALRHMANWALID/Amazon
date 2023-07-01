@@ -81,6 +81,7 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+
 h2,
 h3,
 h4,
@@ -630,10 +631,16 @@ mat-form-field {
   color: $color_SkyBlue_1 !important;
 }
 
+.mat-gray_3 {
+  background-color: $color_gray_3 !important;
+  color: $color_dark_2 !important;
+}
+
 .rating-stars {
   display: flex;
   align-items: center;
   justify-content: center;
+
   .star {
     color: $color_orang_1;
   }
@@ -643,3 +650,48 @@ mat-form-field {
 // @include mat-core();
 
 // $my-primary: mat-palette($mat-lightBlue, 900);
+.price {
+  font-size: $big_x;
+  font-weight: 400;
+  color: $color_gray_3;
+  margin-bottom: $small_x;
+
+  small {
+    font-size: $medium;
+    top: -0.75em;
+    position: relative;
+  }
+}
+
+.add_cart {
+  width: 100%;
+
+  mat-form-field {
+    max-width: calc(100% - 112px);
+    margin: 0 16px;
+
+    input {
+      color: $color_gray_3;
+      text-align: center;
+      appearance: none;
+
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+      height: 0;
+    }
+  }
+
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+    .mat-mdc-form-field-infix {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .mat-mdc-form-field-infix {
+    min-height: 0px;
+  }
+}

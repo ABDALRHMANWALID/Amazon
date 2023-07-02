@@ -19,6 +19,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -41,6 +42,7 @@ const MaterialComponents = [
   MatCheckboxModule,
   MatSliderModule,
   MatPaginatorModule,
+  MatProgressBarModule,
 ];
 @NgModule({
   imports: [MaterialComponents],

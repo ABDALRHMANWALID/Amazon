@@ -20,6 +20,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -43,6 +44,7 @@ const MaterialComponents = [
   MatSliderModule,
   MatPaginatorModule,
   MatProgressBarModule,
+  MatTooltipModule,
 ];
 @NgModule({
   imports: [MaterialComponents],

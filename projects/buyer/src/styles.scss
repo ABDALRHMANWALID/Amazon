@@ -513,7 +513,7 @@ ul {
   color: $color_dark_2;
   font-size: $medium;
   font-weight: 400;
-  line-height: 45px;
+  line-height: 28px;
 
   &.light {
     color: $color_gray_3;
@@ -672,6 +672,14 @@ mat-form-field {
 
 .add_cart {
   width: 100%;
+
+  button {
+    opacity: 1;
+    transition: 0.3s;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
 
   mat-form-field {
     max-width: calc(100% - 112px);

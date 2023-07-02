@@ -13,7 +13,12 @@ const routes: Routes = [
     children: [
       { path: '', component: CartComponent, canActivate: [cartGuard] },
       { path: 'cart', component: CartComponent, canActivate: [cartGuard] },
-      { path: 'orders', component: OrdersComponent, canActivate: [orderGuard] },
+      {
+        path: 'orders',
+        canActivate: [orderGuard],
+        loadChildren: () =>
+          import('./orders/orders.module').then((m) => m.OrdersModule),
+      },
     ],
   },
 ];

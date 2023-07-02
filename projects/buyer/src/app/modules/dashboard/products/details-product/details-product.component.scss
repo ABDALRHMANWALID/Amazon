@@ -1,0 +1,11 @@
+@use "../../../../../styles.scss" as main;
+
+.details-product {
+  padding: main.$large_x 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: calc(main.$large_x * 2);
+}

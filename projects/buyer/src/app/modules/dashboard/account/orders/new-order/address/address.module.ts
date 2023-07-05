@@ -6,18 +6,15 @@ import { AddressComponent } from './address.component';
 import { OptionsAddressComponent } from './options-address/options-address.component';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { AddressMapComponent } from './address-map/address-map.component';
-
+import { MaterialModule } from 'projects/buyer/src/app/shared/material/material.module';
 
 @NgModule({
   declarations: [
-    AddressComponent,
+    // AddressComponent,
     OptionsAddressComponent,
     AddressFormComponent,
-    AddressMapComponent
+    AddressMapComponent,
   ],
-  imports: [
-    CommonModule,
-    AddressRoutingModule
-  ]
+  imports: [CommonModule, AddressRoutingModule, MaterialModule],
 })
-export class AddressModule { }
+export class AddressModule {}

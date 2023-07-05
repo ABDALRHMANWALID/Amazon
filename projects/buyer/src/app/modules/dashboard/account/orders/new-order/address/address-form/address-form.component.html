@@ -1,1 +1,33 @@
-<p>address-form works!</p>
+<div class="address-form">
+  <form class="form">
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let country of countrys" [value]="country">
+          {{ country }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>State / Region</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let region of regions" [value]="region">
+          {{ region }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>City</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let city of cities" [value]="cities">
+          {{ city }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Plot number</mat-label>
+      <input matInput type="number" />
+    </mat-form-field>
+  </form>
+  <button mat-flat-button color="orange">Next</button>
+</div>

@@ -21,6 +21,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -45,6 +48,9 @@ const MaterialComponents = [
   MatPaginatorModule,
   MatProgressBarModule,
   MatTooltipModule,
+  MatRadioModule,
+  MatNativeDateModule,
+  MatDatepickerModule,
 ];
 @NgModule({
   imports: [MaterialComponents],

@@ -1,0 +1,40 @@
+@use "../../../../../../../styles.scss" as main;
+
+.payment {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: main.$medium_x2;
+
+  mat-radio-group {
+    @extend .payment;
+
+    .sub_session {
+      padding: main.$medium main.$small_x;
+      cursor: pointer;
+
+      mat-radio-button {
+        width: 100%;
+        display: flex;
+
+        .con {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: main.$medium;
+
+          .image {
+            width: main.$big_x2;
+          }
+
+          .paragraph {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

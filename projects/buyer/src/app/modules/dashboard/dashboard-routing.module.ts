@@ -31,6 +31,11 @@ const routes: Routes = [
           import('./payment/payment.module').then((m) => m.PaymentModule),
         canActivate: [authGuard, cartGuard],
       },
+      {
+        path: 'seller/:id',
+        loadChildren: () =>
+          import('./seller/seller.module').then((m) => m.SellerModule),
+      },
     ],
   },
 ];

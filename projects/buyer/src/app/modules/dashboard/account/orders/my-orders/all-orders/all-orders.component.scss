@@ -1,0 +1,27 @@
+@use "../../../../../../../styles.scss" as main;
+
+.all-order {
+  padding: main.$large 0;
+  width: 100%;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: main.$big_x;
+
+    .form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: main.$medium;
+      flex-wrap: wrap;
+
+      mat-form-field {
+        flex: 1;
+      }
+    }
+  }
+}

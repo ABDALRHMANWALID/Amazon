@@ -1,1 +1,59 @@
-<p>all-orders works!</p>
+<div class="all-order">
+  <div class="container">
+    <form class="form">
+      <mat-form-field>
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date" />
+          <input matEndDate placeholder="End date" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <button mat-flat-button color="orange">Search</button>
+    </form>
+    <div class="group-orders">
+      <div
+        class="single-order"
+        routerLink=":1"
+        *ngFor="let order of orders; index as i"
+      >
+        <div class="head-order">
+          <ul>
+            <li class="paragraph">
+              <div class="name">Totol :</div>
+              <div class="value">{{ order.total }}</div>
+            </li>
+            <li class="paragraph">
+              <div class="name">Item :</div>
+              <div class="value">{{ order.numItem }}</div>
+            </li>
+            <li class="paragraph">
+              <div class="name">Date :</div>
+              <div class="value">{{ order.date }}</div>
+            </li>
+          </ul>
+          <a class="share-icon" matTooltip="Copy Link">
+            <mat-icon>share</mat-icon>
+          </a>
+        </div>
+        <div class="body-order">
+          <div class="item-order" *ngFor="let item of order.products">
+            <div class="image"><img [src]="item.image" alt="" /></div>
+            <div class="discount">{{ item.discount }}% OFF</div>
+            <div class="info-product">
+              <div class="name">{{ item.name }}</div>
+              <div class="price">
+                {{ item.price }} EGP / {{ item.lastPrice }} EGP
+              </div>
+              <div class="num-item">9</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

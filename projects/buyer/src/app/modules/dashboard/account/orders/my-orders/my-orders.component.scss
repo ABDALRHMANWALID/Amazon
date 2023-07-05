@@ -1,0 +1,107 @@
+@use "../../../../../../styles.scss" as main;
+
+:host ::ng-deep {
+  .group-orders {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: main.$medium_x2;
+
+    .single-order {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: main.$medium;
+      @extend .sub_session;
+
+      .head-order {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: main.$medium;
+        border-bottom: 1px solid main.$color_gray_1;
+
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: main.$medium_x2;
+          flex-wrap: wrap;
+
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: main.$small;
+          }
+        }
+      }
+
+      .body-order {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        align-items: center;
+        justify-content: center;
+        gap: main.$small_x;
+        overflow-x: scroll;
+
+        .item-order {
+          position: relative;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+
+          .image {
+            border-radius: main.$medium;
+          }
+
+          .discount {
+            background-color: main.$color_red_1;
+            color: main.$color_gray_3;
+            font-size: main.$medium;
+            padding: main.$small main.$small_x;
+            border-radius: main.$small;
+            position: absolute;
+            top: main.$small_x;
+            left: main.$small_x;
+          }
+
+          .info-product {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0 main.$medium;
+            gap: main.$small !important;
+
+            .name {
+              @extend .paragraph;
+              color: main.$color_black_3;
+            }
+
+            .price {
+              font-size: main.$medium;
+              font-weight: 600;
+              color: main.$color_dark_1;
+            }
+
+            .num-item {
+              @extend .paragraph;
+              color: main.$color_SkyBlue_1;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

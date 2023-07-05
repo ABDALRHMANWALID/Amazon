@@ -1,0 +1,48 @@
+@use "../../../../../../../styles.scss" as main;
+
+.info-order {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: main.$medium_x2;
+
+  .sub_session {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: main.$medium;
+
+    button {
+      width: 100%;
+      border-width: 1px;
+      border-color: main.$color_dark_2;
+      border-style: solid;
+    }
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: main.$small;
+
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @extend .paragraph;
+        font-weight: 500;
+
+        &.prime {
+          color: main.$color_SkyBlue_1;
+          font-size: main.$medium_x;
+        }
+      }
+    }
+  }
+}

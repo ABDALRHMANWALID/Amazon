@@ -1,0 +1,70 @@
+@use "../../../../../styles.scss" as main;
+
+.info-seller {
+  width: 100%;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .cover-image {
+      max-height: calc(main.$large_x * 6);
+      box-shadow: main.$main-shadow;
+    }
+
+    .con {
+      padding: 0 main.$large_x;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .image {
+        width: calc(main.$large_x * 3);
+        height: calc(main.$large_x * 3);
+        border: main.$small solid main.$color_dark_2;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+
+      .info {
+        padding-top: main.$small_x2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: main.$small;
+
+        .name {
+          @extend .sub_title;
+          color: main.$color_gray_3;
+        }
+
+        .paragraph {
+          color: rgba(main.$color_gray_3, 0.5);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .info-seller {
+    .container {
+      .con {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .info {
+          transform: translateY(-50%);
+          padding-top: 0;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

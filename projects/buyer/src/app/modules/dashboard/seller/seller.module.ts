@@ -7,7 +7,7 @@ import { InfoSellerComponent } from './info-seller/info-seller.component';
 import { StatisticsSellerComponent } from './statistics-seller/statistics-seller.component';
 import { ReviewsSellerComponent } from './reviews-seller/reviews-seller.component';
 import { ProductsSellerComponent } from './products-seller/products-seller.component';
-
+import { MaterialModule } from '../../../shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,8 @@ import { ProductsSellerComponent } from './products-seller/products-seller.compo
     InfoSellerComponent,
     StatisticsSellerComponent,
     ReviewsSellerComponent,
-    ProductsSellerComponent
+    ProductsSellerComponent,
   ],
-  imports: [
-    CommonModule,
-    SellerRoutingModule
-  ]
+  imports: [CommonModule, SellerRoutingModule, MaterialModule],
 })
-export class SellerModule { }
+export class SellerModule {}

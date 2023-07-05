@@ -8,22 +8,22 @@ const routes: Routes = [
     component: NewOrderComponent,
     children: [
       {
-        path: 'address',
+        path: '',
         loadChildren: () =>
           import('./address/address.module').then((m) => m.AddressModule),
       },
-      {
-        path: 'info-order',
-        loadChildren: () =>
-          import('./info-order/info-order.module').then(
-            (m) => m.InfoOrderModule
-          ),
-      },
-      {
-        path: 'payment',
-        loadChildren: () =>
-          import('./payment/payment.module').then((m) => m.PaymentModule),
-      },
+      // {
+      //   path: 'info-order',
+      //   loadChildren: () =>
+      //     import('./info-order/info-order.module').then(
+      //       (m) => m.InfoOrderModule
+      //     ),
+      // },
+      // {
+      //   path: 'payment',
+      //   loadChildren: () =>
+      //     import('./payment/payment.module').then((m) => m.PaymentModule),
+      // },
     ],
   },
 ];

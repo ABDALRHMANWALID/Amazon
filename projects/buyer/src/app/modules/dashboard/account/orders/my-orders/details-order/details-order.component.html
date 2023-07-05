@@ -1,1 +1,67 @@
-<p>details-order works!</p>
+<div class="order-details">
+  <div class="container">
+    <div class="con">
+      <div class="group-orders">
+        <div class="single-order">
+          <div class="head-order">
+            <ul>
+              <li class="paragraph">
+                <div class="name">Totol :</div>
+                <div class="value">{{ order.total }}</div>
+              </li>
+              <li class="paragraph">
+                <div class="name">Item :</div>
+                <div class="value">{{ order.numItem }}</div>
+              </li>
+              <li class="paragraph">
+                <div class="name">Date :</div>
+                <div class="value">{{ order.date }}</div>
+              </li>
+              <li class="paragraph">
+                <div class="name">Address :</div>
+                <div class="value">{{ order.address }}</div>
+              </li>
+            </ul>
+            <a class="share-icon" matTooltip="Copy Link">
+              <mat-icon>share</mat-icon>
+            </a>
+          </div>
+          <div class="body-order">
+            <div class="item-order" *ngFor="let item of order.products">
+              <div class="image"><img [src]="item.image" alt="" /></div>
+              <div class="discount">{{ item.discount }}% OFF</div>
+              <div class="info-product">
+                <div class="name">{{ item.name }}</div>
+                <div class="price">
+                  {{ item.price }} EGP / {{ item.lastPrice }} EGP
+                </div>
+                <div class="num-item">9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-track sub_session">
+      <div class="paragraph">Tracking ID : 1234567890</div>
+      <ul>
+        <li class="active">
+          <div class="name">Ordered Friday</div>
+          <div class="date">27 / 3 / 2023</div>
+        </li>
+        <li class="active">
+          <div class="name">Shipped Saturday</div>
+          <div class="date">27 / 3 / 2023</div>
+        </li>
+        <li>
+          <div class="name">Out for Delivery</div>
+          <div class="date">27 / 3 / 2023</div>
+        </li>
+        <li>
+          <div class="name">Arriving Thurday</div>
+          <div class="date">27 / 3 / 2023</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

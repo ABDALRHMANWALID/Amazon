@@ -1,0 +1,87 @@
+@use "../../../../../../../styles.scss" as main;
+
+.order-details {
+  padding: main.$large 0;
+  width: 100%;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: main.$medium_x2;
+
+    .order-track {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: main.$medium;
+
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: main.$medium_x2;
+
+        li {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @extend .paragraph;
+          color: rgba($color: main.$color_dark_1, $alpha: 0.6);
+
+          &::before {
+            position: relative;
+            content: "";
+            height: main.$medium;
+            width: main.$medium;
+            border: 1px solid rgba($color: main.$color_dark_1, $alpha: 0.6);
+            border-radius: 50%;
+          }
+
+          &::after {
+            position: absolute;
+            top: 100%;
+            left: main.$small_x;
+            content: "";
+            height: main.$medium_x2;
+            width: 2px;
+            background-color: rgba($color: main.$color_dark_1, $alpha: 0.4);
+          }
+
+          &.active {
+            color: main.$color_dark_1;
+
+            &::before {
+              border-color: main.$color_dark_1;
+              background-color: main.$color_green_1;
+            }
+
+            &::after {
+              background-color: main.$color_dark_1;
+            }
+          }
+
+          &:last-of-type {
+            &::after {
+              height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .order-details {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+}

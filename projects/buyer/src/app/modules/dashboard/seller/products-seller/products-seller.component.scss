@@ -1,0 +1,14 @@
+@use "../../../../../styles.scss" as main;
+
+.his-products {
+  width: 100%;
+  .container {
+    .sub_session {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: main.$big_x;
+    }
+  }
+}

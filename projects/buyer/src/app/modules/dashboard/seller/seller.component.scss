@@ -1,0 +1,9 @@
+@use "../../../../styles.scss" as main;
+
+.seller-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: calc(main.$large_x * 2);
+}

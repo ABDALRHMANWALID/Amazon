@@ -6,21 +6,21 @@ import { AddressFormComponent } from './address-form/address-form.component';
 import { AddressMapComponent } from './address-map/address-map.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: AddressComponent,
+  //   children: [
+  { path: '', component: OptionsAddressComponent },
   {
-    path: '',
-    component: AddressComponent,
-    children: [
-      { path: '', component: OptionsAddressComponent },
-      {
-        path: 'form',
-        component: AddressFormComponent,
-      },
-      {
-        path: 'map',
-        component: AddressMapComponent,
-      },
-    ],
+    path: 'form',
+    component: AddressFormComponent,
   },
+  {
+    path: 'map',
+    component: AddressMapComponent,
+  },
+  // ],
+  // },
 ];
 
 @NgModule({

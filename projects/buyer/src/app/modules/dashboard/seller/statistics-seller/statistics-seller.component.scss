@@ -1,0 +1,43 @@
+@use "../../../../../styles.scss" as main;
+
+.statistics-seller {
+  width: 100%;
+
+  .container {
+    .sub_session {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: main.$large_x;
+
+      ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        align-items: center;
+        justify-content: center;
+        gap: main.$medium_x2;
+
+        li {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          gap: main.$medium_x2;
+
+          mat-icon {
+            font-size: main.$large_x2;
+            width: main.$large_x2;
+            height: main.$large_x2;
+          }
+
+          .paragraph {
+            font-size: main.$medium_x2;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../../../../../../styles.scss" as main;
+.new-order {
+  width: 100%;
+  .container {
+    mat-horizontal-stepper {
+      background-color: transparent;
+    }
+  }
+}
+:host ::ng-deep {
+  mat-horizontal-stepper {
+    background-color: transparent;
+
+    .mat-horizontal-content-container {
+      padding: main.$medium_x2;
+    }
+    //   color: main.$color_gray_1;
+    .mat-step-header .mat-step-label,
+    .mat-step-header .mat-step-optional {
+      color: main.$color_gray_3;
+    }
+    .mat-horizontal-stepper-header::before,
+    .mat-horizontal-stepper-header::after,
+    .mat-stepper-horizontal-line {
+      border-top-color: main.$color_gray_3;
+    }
+
+    .mat-step-header .mat-step-icon {
+      background-color: main.$color_gray_1;
+      color: main.$color_dark_2;
+    }
+    .mat-step-header .mat-step-icon-selected {
+      background-color: main.$color_gray_3;
+      color: main.$color_dark_1;
+    }
+  }
+}

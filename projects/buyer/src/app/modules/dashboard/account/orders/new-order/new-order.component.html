@@ -1,2 +1,15 @@
-<p>new-order works!</p>
-<router-outlet></router-outlet>
+<div class="new-order">
+  <div class="container">
+    <mat-horizontal-stepper linear>
+      <mat-step label="Address">
+        <app-address></app-address>
+      </mat-step>
+      <mat-step label="Place Order">
+        <app-info-order></app-info-order>
+      </mat-step>
+      <mat-step label="Payment">
+        <app-payment></app-payment>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>

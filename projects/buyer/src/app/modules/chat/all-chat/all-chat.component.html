@@ -1,1 +1,43 @@
-<p>all-chat works!</p>
+<div class="all-chat">
+  <div class="container">
+    <div class="table-chat">
+      <mat-list>
+        <div class="head-table-chat">
+          <mat-list-item>
+            <div class="line-chat">
+              <div class="image">
+                <img src="assets/images/icon-logo.svg" alt="" />
+              </div>
+              <div class="sub_title">Amazon - Chat</div>
+            </div>
+          </mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+        <ng-container *ngFor="let chat of chats">
+          <mat-list-item (click)="emailMessage = 'bodygrapic@gmail.com'">
+            <div class="line-chat" [class.active]="chat.seen">
+              <div class="image">
+                <img [src]="chat.image" />
+              </div>
+              <div class="con">
+                <div class="name">{{ chat.name }}</div>
+                <div class="paragraph">{{ chat.message }}</div>
+              </div>
+            </div></mat-list-item
+          >
+          <mat-divider></mat-divider
+        ></ng-container>
+      </mat-list>
+    </div>
+    <div class="body-chat">
+      <div class="con" *ngIf="!emailMessage">
+        <div class="image">
+          <img src="assets/images/icon-logo.svg" alt="" />
+        </div>
+        <div class="sub_title">Your messages</div>
+        <div class="paragraph">Ask Sellers of You Want ?</div>
+      </div>
+      <app-single-chat *ngIf="emailMessage"></app-single-chat>
+    </div>
+  </div>
+</div>

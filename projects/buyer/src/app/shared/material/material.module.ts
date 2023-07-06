@@ -24,6 +24,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -51,6 +53,8 @@ const MaterialComponents = [
   MatRadioModule,
   MatNativeDateModule,
   MatDatepickerModule,
+  MatDividerModule,
+  MatListModule,
 ];
 @NgModule({
   imports: [MaterialComponents],
